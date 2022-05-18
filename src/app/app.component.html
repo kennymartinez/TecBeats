@@ -13,11 +13,8 @@
 <!-- Page content-->
 <div class="container">
   <div class="row mt-2 mb-2">
-    <div class="col-10">
-      <input [(ngModel)]="searchTerm" name="searchTerm" class="form-control ">
-    </div>
-    <div class="col">
-      <button (click)="performSearch()" class="btn btn-primary">Search</button>
+    <div class="col-sm-12 col-md-10">
+      <tag-input [(ngModel)]='items' theme='bootstrap' (onAdd)="onItemsChanged($event)" (onRemove)="onItemsChanged($event)"></tag-input>
     </div>
   </div>
 

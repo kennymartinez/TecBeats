@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { TagModel } from 'ngx-chips/core/tag-model';
 import { GResponse } from './models/response';
 import { GiphyService } from './services/giphy.service';
 
@@ -13,6 +14,7 @@ export class AppComponent {
   response: GResponse;
   totalItems = 0;
   currentPage = 1;
+  items: any[];
 
   constructor(private giphySvc: GiphyService) {
   }
@@ -32,5 +34,16 @@ export class AppComponent {
       this.response = data;
       this.totalItems = data.pagination.total_count / data.pagination.count;
     });
+  }
+
+  onItemsChanged(addedItem: any) {
+    if (!this.items || !this.items.length) {
+      this.response = null;
+      this.searchTerm = '';
+      return;
+    }
+
+    this.searchTerm = this.items.map(i => i.value).join(' ');
+    this.performSearch();
   }
 }

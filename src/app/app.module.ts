@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { TagInputModule } from 'ngx-chips';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    TagInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
