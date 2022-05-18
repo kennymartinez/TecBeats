@@ -12,5 +12,22 @@
 </nav>
 <!-- Page content-->
 <div class="container">
+  <div class="row mt-2 mb-2">
+    <div class="col-10">
+      <input [(ngModel)]="searchTerm" name="searchTerm" class="form-control ">
+    </div>
+    <div class="col">
+      <button (click)="performSearch()" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+
+  <div class="row flex" *ngIf="response && response.data">
+    <div class="col-md-6">
+      <div class="row" id="grid">
+        <div class="col-md-4" *ngFor="let row of response.data"><img [src]="row.images.original.url" class="mb-1"></div>
+      </div>
+    </div>
+  </div>
+
   <router-outlet></router-outlet>
 </div>

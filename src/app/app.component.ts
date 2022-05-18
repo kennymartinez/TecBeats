@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GResponse } from './models/response';
+import { GiphyService } from './services/giphy.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tec-beats';
+  searchTerm = '';
+  response: GResponse;
+
+  constructor(private giphySvc: GiphyService) {
+  }
+
+  performSearch() {
+    this.giphySvc.getGifs(this.searchTerm).subscribe(data => {
+      this.response = data;
+    })
+  }
 }
