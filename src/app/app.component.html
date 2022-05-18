@@ -29,5 +29,15 @@
     </div>
   </div>
 
+  <div class="row" *ngIf="response && response.data">
+    <div class="col-xs-12 col-md-4">
+      <pagination 
+        [totalItems]="totalItems" 
+        [(ngModel)]="currentPage" 
+        [maxSize]="10"
+        (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+  </div>
+   
   <router-outlet></router-outlet>
 </div>
