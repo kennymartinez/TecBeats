@@ -15,7 +15,6 @@ export class GiphyService {
 
   getGifs(searchTerm: string, currentPage: number): Observable<GResponse> {
     const offset = (currentPage - 1) * this.offset_size;
-    const url = `${this.apiRoute}?api_key=${this.apiKey}&q=${searchTerm}&limit=${this.offset_size}&offset=${offset}`;
-    return this.httpClient.get<GResponse>(url);
+    const url = `${this.apiRoute}?api_key=${this.apiKey}&q=${searchTerm}&limit=${this.offset_size}&offset=${offset}`;return this.httpClient.get<GResponse>(url);
   }
 }
