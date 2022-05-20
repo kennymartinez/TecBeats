@@ -11,6 +11,7 @@ export class GiphyService {
   private apiRoute = environment.giphyApiUrl;
   private apiKey = environment.giphyApiKey;
   private offset_size = 9;
+  
   constructor(private httpClient: HttpClient) { }
 
   getGifs(searchTerm: string, currentPage: number): Observable<GResponse> {
