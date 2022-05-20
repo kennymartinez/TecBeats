@@ -43,7 +43,7 @@ export class AppComponent {
       return;
     }
 
-    this.searchTerm = items.join(' ');
+    this.searchTerm = items.join(" ");
     this.performSearch();
   }
 }
