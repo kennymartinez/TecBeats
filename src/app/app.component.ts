@@ -36,14 +36,14 @@ export class AppComponent {
     });
   }
 
-  onItemsChanged(addedItem: any) {
-    if (!this.items || !this.items.length) {
+  onItemsChanged(items: string[]) {
+    if (items?.length <= 0) {
       this.response = null;
       this.searchTerm = '';
       return;
     }
 
-    this.searchTerm = this.items.map(i => i.value).join(' ');
+    this.searchTerm = items.join(' ');
     this.performSearch();
   }
 }

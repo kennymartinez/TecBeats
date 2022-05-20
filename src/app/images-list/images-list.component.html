@@ -1,0 +1,10 @@
+<div class="row flex" *ngIf="images?.length > 0; else noData">
+    <div class="col-md-6">
+        <div class="row" id="grid">
+            <div class="col-md-4" *ngFor="let row of images">
+                <img [src]="row.images.original.url" class="mb-1">
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noData>No images to show.</ng-template>

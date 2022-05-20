@@ -1,0 +1,6 @@
+<tag-input 
+    [(ngModel)]="items"
+    theme='bootstrap'
+    (onAdd)="onItemsChanged($event)"
+    (onRemove)="onItemRemoved($event)">
+</tag-input>

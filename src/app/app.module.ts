@@ -8,10 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TagInputModule } from 'ngx-chips';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ImagesListComponent } from './images-list/images-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBarComponent,
+    ImagesListComponent
   ],
   imports: [
     BrowserModule,
